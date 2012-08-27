@@ -1,0 +1,1108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FADDataSet" targetNamespace="http://tempuri.org/FADDataSet.xsd" xmlns:mstns="http://tempuri.org/FADDataSet.xsd" xmlns="http://tempuri.org/FADDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FADConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FADConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FAD_Ware.Properties.Settings.GlobalReference.Default.FADConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MembresTableAdapter" GeneratorDataComponentClassName="MembresTableAdapter" Name="Membres" UserDataComponentName="MembresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectName="FAD.dbo.Membres" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Membres.Clé, Membres.CléInscrit, Membres.CléGroupe, Membres.CléCoachingOld, Membres.CléCoaching, Membres.NbModulesSuivis, Membres.RemarqueCoach, 
+                         Membres.DateInscription, Membres.Tarif, Membres.Syllabus, Membres.Attestation, Membres.IDWebCT, Membres.MotPasseWebCT, Membres.AutresInfos, 
+                         Membres.EstEmailDémarrageEnvoyé, Membres.Commentaire, Membres.SSMA_TimeStamp, Membres.Imprime, Membres.NePasImprimer, Membres.Envoye, 
+                         Membres.NePasEnvoyer, Membres.ClotureSyllabus, Membres.DateClotureSyllabus, Membres.NePasImprime, Membres.CommentSyllabus, 
+                         Coaches.Prénom + ' ' + Coaches.nom AS Coach, Coachings.CléSession + ' ' + Cours.Intitulé + ' (' + CONVERT(nvarchar, Sessions.DateDébut, 103) 
+                         + ')' AS Groupe
+FROM            Membres INNER JOIN
+                         Coachings ON Membres.CléCoaching = Coachings.Clé INNER JOIN
+                         Coaches ON Coachings.CléCoach = Coaches.Clé INNER JOIN
+                         Sessions ON Coachings.CléSession = Sessions.Clé INNER JOIN
+                         Cours ON Sessions.CléCours = Cours.Clé</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="CléInscrit" DataSetColumn="CléInscrit" />
+              <Mapping SourceColumn="CléGroupe" DataSetColumn="CléGroupe" />
+              <Mapping SourceColumn="CléCoachingOld" DataSetColumn="CléCoachingOld" />
+              <Mapping SourceColumn="CléCoaching" DataSetColumn="CléCoaching" />
+              <Mapping SourceColumn="NbModulesSuivis" DataSetColumn="NbModulesSuivis" />
+              <Mapping SourceColumn="RemarqueCoach" DataSetColumn="RemarqueCoach" />
+              <Mapping SourceColumn="DateInscription" DataSetColumn="DateInscription" />
+              <Mapping SourceColumn="Tarif" DataSetColumn="Tarif" />
+              <Mapping SourceColumn="Syllabus" DataSetColumn="Syllabus" />
+              <Mapping SourceColumn="Attestation" DataSetColumn="Attestation" />
+              <Mapping SourceColumn="IDWebCT" DataSetColumn="IDWebCT" />
+              <Mapping SourceColumn="MotPasseWebCT" DataSetColumn="MotPasseWebCT" />
+              <Mapping SourceColumn="AutresInfos" DataSetColumn="AutresInfos" />
+              <Mapping SourceColumn="EstEmailDémarrageEnvoyé" DataSetColumn="EstEmailDémarrageEnvoyé" />
+              <Mapping SourceColumn="Commentaire" DataSetColumn="Commentaire" />
+              <Mapping SourceColumn="SSMA_TimeStamp" DataSetColumn="SSMA_TimeStamp" />
+              <Mapping SourceColumn="Imprime" DataSetColumn="Imprime" />
+              <Mapping SourceColumn="NePasImprimer" DataSetColumn="NePasImprimer" />
+              <Mapping SourceColumn="Envoye" DataSetColumn="Envoye" />
+              <Mapping SourceColumn="NePasEnvoyer" DataSetColumn="NePasEnvoyer" />
+              <Mapping SourceColumn="ClotureSyllabus" DataSetColumn="ClotureSyllabus" />
+              <Mapping SourceColumn="DateClotureSyllabus" DataSetColumn="DateClotureSyllabus" />
+              <Mapping SourceColumn="NePasImprime" DataSetColumn="NePasImprime" />
+              <Mapping SourceColumn="CommentSyllabus" DataSetColumn="CommentSyllabus" />
+              <Mapping SourceColumn="Groupe" DataSetColumn="Groupe" />
+              <Mapping SourceColumn="Coach" DataSetColumn="Coach" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EtablissementsTableAdapter" GeneratorDataComponentClassName="EtablissementsTableAdapter" Name="Etablissements" UserDataComponentName="EtablissementsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectName="FAD.dbo.Etablissements" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Etablissements] WHERE (([Nom] = @Original_Nom) AND ((@IsNull_Implantation = 1 AND [Implantation] IS NULL) OR ([Implantation] = @Original_Implantation)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_Localite = 1 AND [Localite] IS NULL) OR ([Localite] = @Original_Localite)) AND ((@IsNull_CodePostal = 1 AND [CodePostal] IS NULL) OR ([CodePostal] = @Original_CodePostal)) AND ([CTELH] = @Original_CTELH) AND ((@IsNull_FASE = 1 AND [FASE] IS NULL) OR ([FASE] = @Original_FASE)) AND ([Cle] = @Original_Cle))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Nom" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Implantation" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Implantation" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Implantation" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Implantation" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Adresse" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Adresse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Adresse" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Adresse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Localite" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Localite" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Localite" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Localite" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CodePostal" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CodePostal" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CodePostal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CodePostal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_CTELH" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CTELH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FASE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FASE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_FASE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FASE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Cle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Etablissements] ([Nom], [Implantation], [Adresse], [Localite], [CodePostal], [CTELH], [FASE]) VALUES (@Nom, @Implantation, @Adresse, @Localite, @CodePostal, @CTELH, @FASE)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Nom" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Implantation" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Implantation" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Adresse" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Adresse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Localite" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Localite" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CodePostal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CodePostal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@CTELH" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CTELH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FASE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FASE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Nom, Implantation, Adresse, Localite, CodePostal, CTELH, FASE, Cle
+FROM            Etablissements</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Etablissements] SET [Nom] = @Nom, [Implantation] = @Implantation, [Adresse] = @Adresse, [Localite] = @Localite, [CodePostal] = @CodePostal, [CTELH] = @CTELH, [FASE] = @FASE WHERE (([Nom] = @Original_Nom) AND ((@IsNull_Implantation = 1 AND [Implantation] IS NULL) OR ([Implantation] = @Original_Implantation)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_Localite = 1 AND [Localite] IS NULL) OR ([Localite] = @Original_Localite)) AND ((@IsNull_CodePostal = 1 AND [CodePostal] IS NULL) OR ([CodePostal] = @Original_CodePostal)) AND ([CTELH] = @Original_CTELH) AND ((@IsNull_FASE = 1 AND [FASE] IS NULL) OR ([FASE] = @Original_FASE)) AND ([Cle] = @Original_Cle))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Nom" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Implantation" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Implantation" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Adresse" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Adresse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Localite" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Localite" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CodePostal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CodePostal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@CTELH" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CTELH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FASE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FASE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Nom" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Implantation" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Implantation" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Implantation" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Implantation" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Adresse" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Adresse" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Adresse" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Adresse" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Localite" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Localite" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Localite" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Localite" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CodePostal" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CodePostal" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CodePostal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CodePostal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_CTELH" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CTELH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FASE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FASE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_FASE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FASE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Cle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Implantation" DataSetColumn="Implantation" />
+              <Mapping SourceColumn="Adresse" DataSetColumn="Adresse" />
+              <Mapping SourceColumn="Localite" DataSetColumn="Localite" />
+              <Mapping SourceColumn="CodePostal" DataSetColumn="CodePostal" />
+              <Mapping SourceColumn="CTELH" DataSetColumn="CTELH" />
+              <Mapping SourceColumn="FASE" DataSetColumn="FASE" />
+              <Mapping SourceColumn="Cle" DataSetColumn="Cle" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GroupesTableAdapter" GeneratorDataComponentClassName="GroupesTableAdapter" Name="Groupes" UserDataComponentName="GroupesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectName="FAD.dbo.Groupes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Groupes.Clé, Groupes.SousGroupe, Groupes.Année, Groupes.Spécialisation, Groupes.NomContact, Groupes.PrénomContact, Groupes.EmailContact, 
+                         ISNULL(Etablissements.Nom,Groupes.Etablissement), COUNT(Membres.Clé) AS Membres
+FROM            Groupes LEFT OUTER JOIN
+                         Membres ON Groupes.Clé = Membres.CléGroupe LEFT OUTER JOIN
+                         Etablissements ON Groupes.CléEtablissement = Etablissements.Cle
+WHERE        (Groupes.CléSession = @cleSession)
+GROUP BY Groupes.Clé, Groupes.SousGroupe, Groupes.Année, Groupes.Spécialisation, Groupes.NomContact, Groupes.PrénomContact, Groupes.EmailContact, 
+                         Groupes.Etablissement, Etablissements.Nom</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="cleSession" ColumnName="CléSession" DataSourceName="FAD.dbo.Groupes" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@cleSession" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="CléSession" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="SousGroupe" DataSetColumn="SousGroupe" />
+              <Mapping SourceColumn="Année" DataSetColumn="Année" />
+              <Mapping SourceColumn="Spécialisation" DataSetColumn="Spécialisation" />
+              <Mapping SourceColumn="NomContact" DataSetColumn="NomContact" />
+              <Mapping SourceColumn="PrénomContact" DataSetColumn="PrénomContact" />
+              <Mapping SourceColumn="EmailContact" DataSetColumn="EmailContact" />
+              <Mapping SourceColumn="Membres" DataSetColumn="Membres" />
+              <Mapping SourceColumn="Column1" DataSetColumn="Column1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MembresParSessionTableAdapter" GeneratorDataComponentClassName="MembresParSessionTableAdapter" Name="MembresParSession" UserDataComponentName="MembresParSessionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Inscrits.Clé, Inscrits.Nom, Inscrits.Prénom, Statuts.Dénomination, Inscrits.Sexe, Inscrits.Email, ISNULL(Etablissements.Nom, Inscrits.Etablissement) 
+                         AS Etablissement
+FROM            Inscrits INNER JOIN
+                         Membres ON Inscrits.Clé = Membres.CléInscrit INNER JOIN
+                         Statuts ON Inscrits.CléStatut = Statuts.Clé LEFT OUTER JOIN
+                         Etablissements ON Inscrits.CléEtablissement = Etablissements.Cle
+WHERE         Membres.CléGroupe = @CleGroupe</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CleGroupe" ColumnName="CléGroupe" DataSourceName="FAD.dbo.Membres" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CleGroupe" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CléGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Prénom" DataSetColumn="Prénom" />
+              <Mapping SourceColumn="Dénomination" DataSetColumn="Dénomination" />
+              <Mapping SourceColumn="Sexe" DataSetColumn="Sexe" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Etablissement" DataSetColumn="Etablissement" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GroupeReInscriptionTableAdapter" GeneratorDataComponentClassName="GroupeReInscriptionTableAdapter" Name="GroupeReInscription" UserDataComponentName="GroupeReInscriptionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Inscrits.Clé, Inscrits.Nom, Inscrits.Prénom, Statuts.Dénomination
+FROM            Membres INNER JOIN
+                         Inscrits ON Membres.CléInscrit = Inscrits.Clé INNER JOIN
+                         Statuts ON Inscrits.CléStatut = Statuts.Clé
+WHERE Membres.CléGroupe = @cleGroupe</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="cleGroupe" ColumnName="CléGroupe" DataSourceName="FAD.dbo.Membres" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@cleGroupe" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CléGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Prénom" DataSetColumn="Prénom" />
+              <Mapping SourceColumn="Dénomination" DataSetColumn="Dénomination" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SessionsTableAdapter" GeneratorDataComponentClassName="SessionsTableAdapter" Name="Sessions" UserDataComponentName="SessionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Sessions.Clé, Cours.Intitulé, Sessions.DateDébut, Sessions.DateFin, Sessions.AutresInfos
+FROM            Sessions INNER JOIN
+                         Cours ON Sessions.CléCours = Cours.Clé
+ ORDER BY DateDébut DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Intitulé" DataSetColumn="Intitulé" />
+              <Mapping SourceColumn="DateDébut" DataSetColumn="DateDébut" />
+              <Mapping SourceColumn="DateFin" DataSetColumn="DateFin" />
+              <Mapping SourceColumn="AutresInfos" DataSetColumn="AutresInfos" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sessionsAPreparerTableAdapter" GeneratorDataComponentClassName="sessionsAPreparerTableAdapter" Name="sessionsAPreparer" UserDataComponentName="sessionsAPreparerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Sessions.Clé, Cours.Intitulé, Sessions.DateDébut, Sessions.DateFin, COUNT(Membres.CléInscrit) AS Participants
+FROM            Sessions INNER JOIN
+                         Cours ON Sessions.CléCours = Cours.Clé INNER JOIN
+                         Groupes ON Sessions.Clé = Groupes.CléSession LEFT OUTER JOIN
+                         Membres ON Groupes.Clé = Membres.CléGroupe
+WHERE        (Sessions.DateDébut &gt; CURRENT_TIMESTAMP)
+GROUP BY Sessions.Clé, Cours.Intitulé, Sessions.DateDébut, Sessions.DateFin</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Intitulé" DataSetColumn="Intitulé" />
+              <Mapping SourceColumn="DateDébut" DataSetColumn="DateDébut" />
+              <Mapping SourceColumn="DateFin" DataSetColumn="DateFin" />
+              <Mapping SourceColumn="Participants" DataSetColumn="Participants" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sessionsAPreparerGroupesTableAdapter" GeneratorDataComponentClassName="sessionsAPreparerGroupesTableAdapter" Name="sessionsAPreparerGroupes" UserDataComponentName="sessionsAPreparerGroupesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Sessions.Clé, Cours.Intitulé, Sessions.DateDébut, Sessions.DateFin, COUNT(Membres.CléInscrit) AS Participants, ISNULL(Etablissements.Nom, 
+                         Groupes.Etablissement) + ' - ' + ISNULL(Groupes.SousGroupe, '') + ' - ' + ISNULL(Groupes.Spécialisation, '') + ' - ' + ISNULL(Groupes.PrénomContact, '') 
+                         + ISNULL(Groupes.NomContact, '') AS Groupe
+FROM            Sessions INNER JOIN
+                         Cours ON Sessions.CléCours = Cours.Clé INNER JOIN
+                         Groupes ON Sessions.Clé = Groupes.CléSession LEFT OUTER JOIN
+                         Etablissements ON Groupes.CléEtablissement = Etablissements.Cle LEFT OUTER JOIN
+                         Membres ON Groupes.Clé = Membres.CléGroupe
+WHERE        (Sessions.DateDébut &gt; CURRENT_TIMESTAMP)
+GROUP BY Sessions.Clé, Cours.Intitulé, Sessions.DateDébut, Sessions.DateFin, Etablissements.Nom, Groupes.Etablissement, Groupes.SousGroupe, Groupes.Spécialisation, 
+                         Groupes.PrénomContact, Groupes.NomContact</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Intitulé" DataSetColumn="Intitulé" />
+              <Mapping SourceColumn="DateDébut" DataSetColumn="DateDébut" />
+              <Mapping SourceColumn="DateFin" DataSetColumn="DateFin" />
+              <Mapping SourceColumn="Participants" DataSetColumn="Participants" />
+              <Mapping SourceColumn="Groupe" DataSetColumn="Groupe" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabCoachingTableAdapter" GeneratorDataComponentClassName="TabCoachingTableAdapter" Name="TabCoaching" UserDataComponentName="TabCoachingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Membres.Clé, Inscrits.Nom, Inscrits.Prénom, COUNT(Modules.Clé) AS Total
+FROM            Coachings INNER JOIN
+                         Membres ON Coachings.Clé = Membres.CléCoaching INNER JOIN
+                         Inscrits ON Membres.CléInscrit = Inscrits.Clé LEFT OUTER JOIN
+                         Modules ON Membres.Clé = Modules.CléMembre
+WHERE        (Coachings.Clé = @CleCoaching)
+GROUP BY Membres.Clé, Inscrits.Nom, Inscrits.Prénom</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CleCoaching" ColumnName="Clé" DataSourceName="FAD.dbo.Coachings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CleCoaching" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Clé" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Prénom" DataSetColumn="Prénom" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CoachingCommentsTableAdapter" GeneratorDataComponentClassName="CoachingCommentsTableAdapter" Name="CoachingComments" UserDataComponentName="CoachingCommentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectName="FAD.dbo.CoachingComments" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [CoachingComments] WHERE (([id] = @Original_id) AND ([Comment] = @Original_Comment) AND ([Date] = @Original_Date))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Comment" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [CoachingComments] ([Comment], [Date]) VALUES (@Comment, @Date);
+SELECT id, Comment, Date FROM CoachingComments WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Comment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, Comment, Date
+FROM            CoachingComments
+WHERE CléSession = @cleSession</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="cleSession" ColumnName="CléSession" DataSourceName="FAD.dbo.CoachingComments" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@cleSession" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="CléSession" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [CoachingComments] SET [Comment] = @Comment, [Date] = @Date WHERE (([id] = @Original_id) AND ([Comment] = @Original_Comment) AND ([Date] = @Original_Date));
+SELECT id, Comment, Date FROM CoachingComments WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Comment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Comment" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="FAD.dbo.CoachingComments" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabCoachingsStartTableAdapter" GeneratorDataComponentClassName="TabCoachingsStartTableAdapter" Name="TabCoachingsStart" UserDataComponentName="TabCoachingsStartTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectName="FAD.dbo.Coachings" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Coachings.Clé, Coachings.CléCoach, COUNT(Membres.CléCoaching) AS Coachés, Coachings.OccurenceWebCT, Coachings.URN
+FROM            Coachings INNER JOIN
+                         Membres ON Coachings.Clé = Membres.CléCoaching
+WHERE CléSession = @cleSession
+GROUP BY Coachings.Clé, Coachings.CléCoach, Coachings.OccurenceWebCT, Coachings.URN</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="cleSession" ColumnName="CléSession" DataSourceName="FAD.dbo.Coachings" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@cleSession" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="CléSession" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="CléCoach" DataSetColumn="CléCoach" />
+              <Mapping SourceColumn="Coachés" DataSetColumn="Coachés" />
+              <Mapping SourceColumn="OccurenceWebCT" DataSetColumn="OccurenceWebCT" />
+              <Mapping SourceColumn="URN" DataSetColumn="URN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CoachesTableAdapter" GeneratorDataComponentClassName="CoachesTableAdapter" Name="Coaches" UserDataComponentName="CoachesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectName="FAD.dbo.Coaches" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Coaches] WHERE (([Clé] = @Original_Clé))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Clé" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Clé" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Clé, Prénom + ' ' + nom AS Nom
+FROM            Coaches</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Coaches] SET [Clé] = @Clé WHERE (([Clé] = @Original_Clé));
+SELECT Clé, Prénom + ' ' + nom AS Nom FROM Coaches WHERE (Clé = @Clé)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Clé" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Clé" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Clé" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Clé" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabCoachingStart2TableAdapter" GeneratorDataComponentClassName="TabCoachingStart2TableAdapter" Name="TabCoachingStart2" UserDataComponentName="TabCoachingStart2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FADConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Membres.Clé, Inscrits.Prénom + ' ' + Inscrits.Nom AS Inscrit, Coachings.CléCoach, Groupes.Année, Groupes.Spécialisation, 
+                         Groupes.PrénomContact + ' ' + Groupes.NomContact AS 'Personne de contact', Membres.EstEmailDémarrageEnvoyé, Groupes.EmailContact, Membres.IDWebCT, 
+                         Membres.MotPasseWebCT, Inscrits.Email, Inscrits.CléStatut, Groupes.SousGroupe, Inscrits.Nom, Inscrits.Prénom
+FROM            Membres INNER JOIN
+                         Inscrits ON Membres.CléInscrit = Inscrits.Clé INNER JOIN
+                         Statuts ON Inscrits.CléStatut = Statuts.Clé INNER JOIN
+                         Coachings ON Membres.CléCoaching = Coachings.Clé INNER JOIN
+                         Groupes ON Membres.CléGroupe = Groupes.Clé
+WHERE        (Coachings.CléSession = @CleSession)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CleSession" ColumnName="CléSession" DataSourceName="FAD.dbo.Coachings" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@CleSession" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="CléSession" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Clé" DataSetColumn="Clé" />
+              <Mapping SourceColumn="Inscrit" DataSetColumn="Inscrit" />
+              <Mapping SourceColumn="CléCoach" DataSetColumn="CléCoach" />
+              <Mapping SourceColumn="Année" DataSetColumn="Année" />
+              <Mapping SourceColumn="Spécialisation" DataSetColumn="Spécialisation" />
+              <Mapping SourceColumn="Personne de contact" DataSetColumn="Personne de contact" />
+              <Mapping SourceColumn="EstEmailDémarrageEnvoyé" DataSetColumn="EstEmailDémarrageEnvoyé" />
+              <Mapping SourceColumn="EmailContact" DataSetColumn="EmailContact" />
+              <Mapping SourceColumn="IDWebCT" DataSetColumn="IDWebCT" />
+              <Mapping SourceColumn="MotPasseWebCT" DataSetColumn="MotPasseWebCT" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="CléStatut" DataSetColumn="CléStatut" />
+              <Mapping SourceColumn="SousGroupe" DataSetColumn="SousGroupe" />
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="Prénom" DataSetColumn="Prénom" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FADDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FADDataSet" msprop:Generator_UserDSName="FADDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Membres" msprop:Generator_TableClassName="MembresDataTable" msprop:Generator_TableVarName="tableMembres" msprop:Generator_TablePropName="Membres" msprop:Generator_RowDeletingName="MembresRowDeleting" msprop:Generator_UserTableName="Membres" msprop:Generator_RowChangingName="MembresRowChanging" msprop:Generator_RowEvHandlerName="MembresRowChangeEventHandler" msprop:Generator_RowDeletedName="MembresRowDeleted" msprop:Generator_RowEvArgName="MembresRowChangeEvent" msprop:Generator_RowChangedName="MembresRowChanged" msprop:Generator_RowClassName="MembresRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="CléInscrit" msprop:Generator_ColumnVarNameInTable="columnCléInscrit" msprop:Generator_ColumnPropNameInRow="CléInscrit" msprop:Generator_ColumnPropNameInTable="CléInscritColumn" msprop:Generator_UserColumnName="CléInscrit" type="xs:int" />
+              <xs:element name="CléGroupe" msprop:Generator_ColumnVarNameInTable="columnCléGroupe" msprop:Generator_ColumnPropNameInRow="CléGroupe" msprop:Generator_ColumnPropNameInTable="CléGroupeColumn" msprop:Generator_UserColumnName="CléGroupe" type="xs:int" />
+              <xs:element name="CléCoachingOld" msprop:Generator_ColumnVarNameInTable="columnCléCoachingOld" msprop:Generator_ColumnPropNameInRow="CléCoachingOld" msprop:Generator_ColumnPropNameInTable="CléCoachingOldColumn" msprop:Generator_UserColumnName="CléCoachingOld" type="xs:int" minOccurs="0" />
+              <xs:element name="CléCoaching" msprop:Generator_ColumnVarNameInTable="columnCléCoaching" msprop:Generator_ColumnPropNameInRow="CléCoaching" msprop:Generator_ColumnPropNameInTable="CléCoachingColumn" msprop:Generator_UserColumnName="CléCoaching" type="xs:int" minOccurs="0" />
+              <xs:element name="NbModulesSuivis" msprop:Generator_ColumnVarNameInTable="columnNbModulesSuivis" msprop:Generator_ColumnPropNameInRow="NbModulesSuivis" msprop:Generator_ColumnPropNameInTable="NbModulesSuivisColumn" msprop:Generator_UserColumnName="NbModulesSuivis" type="xs:int" minOccurs="0" />
+              <xs:element name="RemarqueCoach" msprop:Generator_ColumnVarNameInTable="columnRemarqueCoach" msprop:Generator_ColumnPropNameInRow="RemarqueCoach" msprop:Generator_ColumnPropNameInTable="RemarqueCoachColumn" msprop:Generator_UserColumnName="RemarqueCoach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateInscription" msprop:Generator_ColumnVarNameInTable="columnDateInscription" msprop:Generator_ColumnPropNameInRow="DateInscription" msprop:Generator_ColumnPropNameInTable="DateInscriptionColumn" msprop:Generator_UserColumnName="DateInscription" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Tarif" msprop:Generator_ColumnVarNameInTable="columnTarif" msprop:Generator_ColumnPropNameInRow="Tarif" msprop:Generator_ColumnPropNameInTable="TarifColumn" msprop:Generator_UserColumnName="Tarif" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+              <xs:element name="Syllabus" msprop:Generator_ColumnVarNameInTable="columnSyllabus" msprop:Generator_ColumnPropNameInRow="Syllabus" msprop:Generator_ColumnPropNameInTable="SyllabusColumn" msprop:Generator_UserColumnName="Syllabus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attestation" msprop:Generator_ColumnVarNameInTable="columnAttestation" msprop:Generator_ColumnPropNameInRow="Attestation" msprop:Generator_ColumnPropNameInTable="AttestationColumn" msprop:Generator_UserColumnName="Attestation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDWebCT" msprop:Generator_ColumnVarNameInTable="columnIDWebCT" msprop:Generator_ColumnPropNameInRow="IDWebCT" msprop:Generator_ColumnPropNameInTable="IDWebCTColumn" msprop:Generator_UserColumnName="IDWebCT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MotPasseWebCT" msprop:Generator_ColumnVarNameInTable="columnMotPasseWebCT" msprop:Generator_ColumnPropNameInRow="MotPasseWebCT" msprop:Generator_ColumnPropNameInTable="MotPasseWebCTColumn" msprop:Generator_UserColumnName="MotPasseWebCT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AutresInfos" msprop:Generator_ColumnVarNameInTable="columnAutresInfos" msprop:Generator_ColumnPropNameInRow="AutresInfos" msprop:Generator_ColumnPropNameInTable="AutresInfosColumn" msprop:Generator_UserColumnName="AutresInfos" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstEmailDémarrageEnvoyé" msprop:Generator_ColumnVarNameInTable="columnEstEmailDémarrageEnvoyé" msprop:Generator_ColumnPropNameInRow="EstEmailDémarrageEnvoyé" msprop:Generator_ColumnPropNameInTable="EstEmailDémarrageEnvoyéColumn" msprop:Generator_UserColumnName="EstEmailDémarrageEnvoyé" type="xs:boolean" />
+              <xs:element name="Commentaire" msprop:Generator_ColumnVarNameInTable="columnCommentaire" msprop:Generator_ColumnPropNameInRow="Commentaire" msprop:Generator_ColumnPropNameInTable="CommentaireColumn" msprop:Generator_UserColumnName="Commentaire" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SSMA_TimeStamp" msprop:Generator_ColumnVarNameInTable="columnSSMA_TimeStamp" msprop:Generator_ColumnPropNameInRow="SSMA_TimeStamp" msprop:Generator_ColumnPropNameInTable="SSMA_TimeStampColumn" msprop:Generator_UserColumnName="SSMA_TimeStamp" type="xs:base64Binary" />
+              <xs:element name="Imprime" msprop:Generator_ColumnVarNameInTable="columnImprime" msprop:Generator_ColumnPropNameInRow="Imprime" msprop:Generator_ColumnPropNameInTable="ImprimeColumn" msprop:Generator_UserColumnName="Imprime" type="xs:boolean" />
+              <xs:element name="NePasImprimer" msprop:Generator_ColumnVarNameInTable="columnNePasImprimer" msprop:Generator_ColumnPropNameInRow="NePasImprimer" msprop:Generator_ColumnPropNameInTable="NePasImprimerColumn" msprop:Generator_UserColumnName="NePasImprimer" type="xs:boolean" />
+              <xs:element name="Envoye" msprop:Generator_ColumnVarNameInTable="columnEnvoye" msprop:Generator_ColumnPropNameInRow="Envoye" msprop:Generator_ColumnPropNameInTable="EnvoyeColumn" msprop:Generator_UserColumnName="Envoye" type="xs:boolean" />
+              <xs:element name="NePasEnvoyer" msprop:Generator_ColumnVarNameInTable="columnNePasEnvoyer" msprop:Generator_ColumnPropNameInRow="NePasEnvoyer" msprop:Generator_ColumnPropNameInTable="NePasEnvoyerColumn" msprop:Generator_UserColumnName="NePasEnvoyer" type="xs:boolean" />
+              <xs:element name="ClotureSyllabus" msprop:Generator_ColumnVarNameInTable="columnClotureSyllabus" msprop:Generator_ColumnPropNameInRow="ClotureSyllabus" msprop:Generator_ColumnPropNameInTable="ClotureSyllabusColumn" msprop:Generator_UserColumnName="ClotureSyllabus" type="xs:boolean" />
+              <xs:element name="DateClotureSyllabus" msprop:Generator_ColumnVarNameInTable="columnDateClotureSyllabus" msprop:Generator_ColumnPropNameInRow="DateClotureSyllabus" msprop:Generator_ColumnPropNameInTable="DateClotureSyllabusColumn" msprop:Generator_UserColumnName="DateClotureSyllabus" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NePasImprime" msprop:Generator_ColumnVarNameInTable="columnNePasImprime" msprop:Generator_ColumnPropNameInRow="NePasImprime" msprop:Generator_ColumnPropNameInTable="NePasImprimeColumn" msprop:Generator_UserColumnName="NePasImprime" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CommentSyllabus" msprop:Generator_ColumnVarNameInTable="columnCommentSyllabus" msprop:Generator_ColumnPropNameInRow="CommentSyllabus" msprop:Generator_ColumnPropNameInTable="CommentSyllabusColumn" msprop:Generator_UserColumnName="CommentSyllabus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Groupe" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGroupe" msprop:Generator_ColumnPropNameInRow="Groupe" msprop:Generator_ColumnPropNameInTable="GroupeColumn" msprop:Generator_UserColumnName="Groupe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="144" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Coach" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoach" msprop:Generator_ColumnPropNameInRow="Coach" msprop:Generator_ColumnPropNameInTable="CoachColumn" msprop:Generator_UserColumnName="Coach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Etablissements" msprop:Generator_TableClassName="EtablissementsDataTable" msprop:Generator_TableVarName="tableEtablissements" msprop:Generator_TablePropName="Etablissements" msprop:Generator_RowDeletingName="EtablissementsRowDeleting" msprop:Generator_UserTableName="Etablissements" msprop:Generator_RowChangingName="EtablissementsRowChanging" msprop:Generator_RowEvHandlerName="EtablissementsRowChangeEventHandler" msprop:Generator_RowDeletedName="EtablissementsRowDeleted" msprop:Generator_RowEvArgName="EtablissementsRowChangeEvent" msprop:Generator_RowChangedName="EtablissementsRowChanged" msprop:Generator_RowClassName="EtablissementsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Implantation" msprop:Generator_ColumnVarNameInTable="columnImplantation" msprop:Generator_ColumnPropNameInRow="Implantation" msprop:Generator_ColumnPropNameInTable="ImplantationColumn" msprop:Generator_UserColumnName="Implantation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Adresse" msprop:Generator_ColumnVarNameInTable="columnAdresse" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_UserColumnName="Adresse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Localite" msprop:Generator_ColumnVarNameInTable="columnLocalite" msprop:Generator_ColumnPropNameInRow="Localite" msprop:Generator_ColumnPropNameInTable="LocaliteColumn" msprop:Generator_UserColumnName="Localite" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodePostal" msprop:Generator_ColumnVarNameInTable="columnCodePostal" msprop:Generator_ColumnPropNameInRow="CodePostal" msprop:Generator_ColumnPropNameInTable="CodePostalColumn" msprop:Generator_UserColumnName="CodePostal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CTELH" msprop:Generator_ColumnVarNameInTable="columnCTELH" msprop:Generator_ColumnPropNameInRow="CTELH" msprop:Generator_ColumnPropNameInTable="CTELHColumn" msprop:Generator_UserColumnName="CTELH" type="xs:boolean" />
+              <xs:element name="FASE" msprop:Generator_ColumnVarNameInTable="columnFASE" msprop:Generator_ColumnPropNameInRow="FASE" msprop:Generator_ColumnPropNameInTable="FASEColumn" msprop:Generator_UserColumnName="FASE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCle" msprop:Generator_ColumnPropNameInRow="Cle" msprop:Generator_ColumnPropNameInTable="CleColumn" msprop:Generator_UserColumnName="Cle" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Groupes" msprop:Generator_TableClassName="GroupesDataTable" msprop:Generator_TableVarName="tableGroupes" msprop:Generator_TablePropName="Groupes" msprop:Generator_RowDeletingName="GroupesRowDeleting" msprop:Generator_UserTableName="Groupes" msprop:Generator_RowChangingName="GroupesRowChanging" msprop:Generator_RowEvHandlerName="GroupesRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupesRowDeleted" msprop:Generator_RowEvArgName="GroupesRowChangeEvent" msprop:Generator_RowChangedName="GroupesRowChanged" msprop:Generator_RowClassName="GroupesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="SousGroupe" msprop:Generator_ColumnVarNameInTable="columnSousGroupe" msprop:Generator_ColumnPropNameInRow="SousGroupe" msprop:Generator_ColumnPropNameInTable="SousGroupeColumn" msprop:Generator_UserColumnName="SousGroupe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Année" msprop:Generator_ColumnVarNameInTable="columnAnnée" msprop:Generator_ColumnPropNameInRow="Année" msprop:Generator_ColumnPropNameInTable="AnnéeColumn" msprop:Generator_UserColumnName="Année" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Spécialisation" msprop:Generator_ColumnVarNameInTable="columnSpécialisation" msprop:Generator_ColumnPropNameInRow="Spécialisation" msprop:Generator_ColumnPropNameInTable="SpécialisationColumn" msprop:Generator_UserColumnName="Spécialisation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NomContact" msprop:Generator_ColumnVarNameInTable="columnNomContact" msprop:Generator_ColumnPropNameInRow="NomContact" msprop:Generator_ColumnPropNameInTable="NomContactColumn" msprop:Generator_UserColumnName="NomContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrénomContact" msprop:Generator_ColumnVarNameInTable="columnPrénomContact" msprop:Generator_ColumnPropNameInRow="PrénomContact" msprop:Generator_ColumnPropNameInTable="PrénomContactColumn" msprop:Generator_UserColumnName="PrénomContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailContact" msprop:Generator_ColumnVarNameInTable="columnEmailContact" msprop:Generator_ColumnPropNameInRow="EmailContact" msprop:Generator_ColumnPropNameInTable="EmailContactColumn" msprop:Generator_UserColumnName="EmailContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Membres" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMembres" msprop:Generator_ColumnPropNameInRow="Membres" msprop:Generator_ColumnPropNameInTable="MembresColumn" msprop:Generator_UserColumnName="Membres" type="xs:int" minOccurs="0" />
+              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnColumn1" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_UserColumnName="Column1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MembresParSession" msprop:Generator_TableClassName="MembresParSessionDataTable" msprop:Generator_TableVarName="tableMembresParSession" msprop:Generator_TablePropName="MembresParSession" msprop:Generator_RowDeletingName="MembresParSessionRowDeleting" msprop:Generator_UserTableName="MembresParSession" msprop:Generator_RowChangingName="MembresParSessionRowChanging" msprop:Generator_RowEvHandlerName="MembresParSessionRowChangeEventHandler" msprop:Generator_RowDeletedName="MembresParSessionRowDeleted" msprop:Generator_RowEvArgName="MembresParSessionRowChangeEvent" msprop:Generator_RowChangedName="MembresParSessionRowChanged" msprop:Generator_RowClassName="MembresParSessionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prénom" msprop:Generator_ColumnVarNameInTable="columnPrénom" msprop:Generator_ColumnPropNameInRow="Prénom" msprop:Generator_ColumnPropNameInTable="PrénomColumn" msprop:Generator_UserColumnName="Prénom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dénomination" msprop:Generator_ColumnVarNameInTable="columnDénomination" msprop:Generator_ColumnPropNameInRow="Dénomination" msprop:Generator_ColumnPropNameInTable="DénominationColumn" msprop:Generator_UserColumnName="Dénomination">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sexe" msprop:Generator_ColumnVarNameInTable="columnSexe" msprop:Generator_ColumnPropNameInRow="Sexe" msprop:Generator_ColumnPropNameInTable="SexeColumn" msprop:Generator_UserColumnName="Sexe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Etablissement" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEtablissement" msprop:Generator_ColumnPropNameInRow="Etablissement" msprop:Generator_ColumnPropNameInTable="EtablissementColumn" msprop:Generator_UserColumnName="Etablissement" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GroupeReInscription" msprop:Generator_TableClassName="GroupeReInscriptionDataTable" msprop:Generator_TableVarName="tableGroupeReInscription" msprop:Generator_TablePropName="GroupeReInscription" msprop:Generator_RowDeletingName="GroupeReInscriptionRowDeleting" msprop:Generator_UserTableName="GroupeReInscription" msprop:Generator_RowChangingName="GroupeReInscriptionRowChanging" msprop:Generator_RowEvHandlerName="GroupeReInscriptionRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupeReInscriptionRowDeleted" msprop:Generator_RowEvArgName="GroupeReInscriptionRowChangeEvent" msprop:Generator_RowChangedName="GroupeReInscriptionRowChanged" msprop:Generator_RowClassName="GroupeReInscriptionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prénom" msprop:Generator_ColumnVarNameInTable="columnPrénom" msprop:Generator_ColumnPropNameInRow="Prénom" msprop:Generator_ColumnPropNameInTable="PrénomColumn" msprop:Generator_UserColumnName="Prénom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dénomination" msprop:Generator_ColumnVarNameInTable="columnDénomination" msprop:Generator_ColumnPropNameInRow="Dénomination" msprop:Generator_ColumnPropNameInTable="DénominationColumn" msprop:Generator_UserColumnName="Dénomination">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sessions" msprop:Generator_TableClassName="SessionsDataTable" msprop:Generator_TableVarName="tableSessions" msprop:Generator_TablePropName="Sessions" msprop:Generator_RowDeletingName="SessionsRowDeleting" msprop:Generator_UserTableName="Sessions" msprop:Generator_RowChangingName="SessionsRowChanging" msprop:Generator_RowEvHandlerName="SessionsRowChangeEventHandler" msprop:Generator_RowDeletedName="SessionsRowDeleted" msprop:Generator_RowEvArgName="SessionsRowChangeEvent" msprop:Generator_RowChangedName="SessionsRowChanged" msprop:Generator_RowClassName="SessionsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Intitulé" msprop:Generator_ColumnVarNameInTable="columnIntitulé" msprop:Generator_ColumnPropNameInRow="Intitulé" msprop:Generator_ColumnPropNameInTable="IntituléColumn" msprop:Generator_UserColumnName="Intitulé" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateDébut" msprop:Generator_ColumnVarNameInTable="columnDateDébut" msprop:Generator_ColumnPropNameInRow="DateDébut" msprop:Generator_ColumnPropNameInTable="DateDébutColumn" msprop:Generator_UserColumnName="DateDébut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateFin" msprop:Generator_ColumnVarNameInTable="columnDateFin" msprop:Generator_ColumnPropNameInRow="DateFin" msprop:Generator_ColumnPropNameInTable="DateFinColumn" msprop:Generator_UserColumnName="DateFin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AutresInfos" msprop:Generator_ColumnVarNameInTable="columnAutresInfos" msprop:Generator_ColumnPropNameInRow="AutresInfos" msprop:Generator_ColumnPropNameInTable="AutresInfosColumn" msprop:Generator_UserColumnName="AutresInfos" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sessionsAPreparer" msprop:Generator_TableClassName="sessionsAPreparerDataTable" msprop:Generator_TableVarName="tablesessionsAPreparer" msprop:Generator_TablePropName="sessionsAPreparer" msprop:Generator_RowDeletingName="sessionsAPreparerRowDeleting" msprop:Generator_UserTableName="sessionsAPreparer" msprop:Generator_RowChangingName="sessionsAPreparerRowChanging" msprop:Generator_RowEvHandlerName="sessionsAPreparerRowChangeEventHandler" msprop:Generator_RowDeletedName="sessionsAPreparerRowDeleted" msprop:Generator_RowEvArgName="sessionsAPreparerRowChangeEvent" msprop:Generator_RowChangedName="sessionsAPreparerRowChanged" msprop:Generator_RowClassName="sessionsAPreparerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Intitulé" msprop:Generator_ColumnVarNameInTable="columnIntitulé" msprop:Generator_ColumnPropNameInRow="Intitulé" msprop:Generator_ColumnPropNameInTable="IntituléColumn" msprop:Generator_UserColumnName="Intitulé" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateDébut" msprop:Generator_ColumnVarNameInTable="columnDateDébut" msprop:Generator_ColumnPropNameInRow="DateDébut" msprop:Generator_ColumnPropNameInTable="DateDébutColumn" msprop:Generator_UserColumnName="DateDébut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateFin" msprop:Generator_ColumnVarNameInTable="columnDateFin" msprop:Generator_ColumnPropNameInRow="DateFin" msprop:Generator_ColumnPropNameInTable="DateFinColumn" msprop:Generator_UserColumnName="DateFin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Participants" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParticipants" msprop:Generator_ColumnPropNameInRow="Participants" msprop:Generator_ColumnPropNameInTable="ParticipantsColumn" msprop:Generator_UserColumnName="Participants" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sessionsAPreparerGroupes" msprop:Generator_TableClassName="sessionsAPreparerGroupesDataTable" msprop:Generator_TableVarName="tablesessionsAPreparerGroupes" msprop:Generator_TablePropName="sessionsAPreparerGroupes" msprop:Generator_RowDeletingName="sessionsAPreparerGroupesRowDeleting" msprop:Generator_UserTableName="sessionsAPreparerGroupes" msprop:Generator_RowChangingName="sessionsAPreparerGroupesRowChanging" msprop:Generator_RowEvHandlerName="sessionsAPreparerGroupesRowChangeEventHandler" msprop:Generator_RowDeletedName="sessionsAPreparerGroupesRowDeleted" msprop:Generator_RowEvArgName="sessionsAPreparerGroupesRowChangeEvent" msprop:Generator_RowChangedName="sessionsAPreparerGroupesRowChanged" msprop:Generator_RowClassName="sessionsAPreparerGroupesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Intitulé" msprop:Generator_ColumnVarNameInTable="columnIntitulé" msprop:Generator_ColumnPropNameInRow="Intitulé" msprop:Generator_ColumnPropNameInTable="IntituléColumn" msprop:Generator_UserColumnName="Intitulé" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateDébut" msprop:Generator_ColumnVarNameInTable="columnDateDébut" msprop:Generator_ColumnPropNameInRow="DateDébut" msprop:Generator_ColumnPropNameInTable="DateDébutColumn" msprop:Generator_UserColumnName="DateDébut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateFin" msprop:Generator_ColumnVarNameInTable="columnDateFin" msprop:Generator_ColumnPropNameInRow="DateFin" msprop:Generator_ColumnPropNameInTable="DateFinColumn" msprop:Generator_UserColumnName="DateFin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Participants" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParticipants" msprop:Generator_ColumnPropNameInRow="Participants" msprop:Generator_ColumnPropNameInTable="ParticipantsColumn" msprop:Generator_UserColumnName="Participants" type="xs:int" minOccurs="0" />
+              <xs:element name="Groupe" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGroupe" msprop:Generator_ColumnPropNameInRow="Groupe" msprop:Generator_ColumnPropNameInTable="GroupeColumn" msprop:Generator_UserColumnName="Groupe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="875" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TabCoaching" msprop:Generator_TableClassName="TabCoachingDataTable" msprop:Generator_TableVarName="tableTabCoaching" msprop:Generator_TablePropName="TabCoaching" msprop:Generator_RowDeletingName="TabCoachingRowDeleting" msprop:Generator_UserTableName="TabCoaching" msprop:Generator_RowChangingName="TabCoachingRowChanging" msprop:Generator_RowEvHandlerName="TabCoachingRowChangeEventHandler" msprop:Generator_RowDeletedName="TabCoachingRowDeleted" msprop:Generator_RowEvArgName="TabCoachingRowChangeEvent" msprop:Generator_RowChangedName="TabCoachingRowChanged" msprop:Generator_RowClassName="TabCoachingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prénom" msprop:Generator_ColumnVarNameInTable="columnPrénom" msprop:Generator_ColumnPropNameInRow="Prénom" msprop:Generator_ColumnPropNameInTable="PrénomColumn" msprop:Generator_UserColumnName="Prénom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CoachingComments" msprop:Generator_TableClassName="CoachingCommentsDataTable" msprop:Generator_TableVarName="tableCoachingComments" msprop:Generator_TablePropName="CoachingComments" msprop:Generator_RowDeletingName="CoachingCommentsRowDeleting" msprop:Generator_UserTableName="CoachingComments" msprop:Generator_RowChangingName="CoachingCommentsRowChanging" msprop:Generator_RowEvHandlerName="CoachingCommentsRowChangeEventHandler" msprop:Generator_RowDeletedName="CoachingCommentsRowDeleted" msprop:Generator_RowEvArgName="CoachingCommentsRowChangeEvent" msprop:Generator_RowChangedName="CoachingCommentsRowChanged" msprop:Generator_RowClassName="CoachingCommentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TabCoachingsStart" msprop:Generator_TableClassName="TabCoachingsStartDataTable" msprop:Generator_TableVarName="tableTabCoachingsStart" msprop:Generator_TablePropName="TabCoachingsStart" msprop:Generator_RowDeletingName="TabCoachingsStartRowDeleting" msprop:Generator_UserTableName="TabCoachingsStart" msprop:Generator_RowChangingName="TabCoachingsStartRowChanging" msprop:Generator_RowEvHandlerName="TabCoachingsStartRowChangeEventHandler" msprop:Generator_RowDeletedName="TabCoachingsStartRowDeleted" msprop:Generator_RowEvArgName="TabCoachingsStartRowChangeEvent" msprop:Generator_RowChangedName="TabCoachingsStartRowChanged" msprop:Generator_RowClassName="TabCoachingsStartRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="CléCoach" msprop:Generator_ColumnVarNameInTable="columnCléCoach" msprop:Generator_ColumnPropNameInRow="CléCoach" msprop:Generator_ColumnPropNameInTable="CléCoachColumn" msprop:Generator_UserColumnName="CléCoach" type="xs:int" />
+              <xs:element name="Coachés" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoachés" msprop:Generator_ColumnPropNameInRow="Coachés" msprop:Generator_ColumnPropNameInTable="CoachésColumn" msprop:Generator_UserColumnName="Coachés" type="xs:int" minOccurs="0" />
+              <xs:element name="OccurenceWebCT" msprop:Generator_ColumnVarNameInTable="columnOccurenceWebCT" msprop:Generator_ColumnPropNameInRow="OccurenceWebCT" msprop:Generator_ColumnPropNameInTable="OccurenceWebCTColumn" msprop:Generator_UserColumnName="OccurenceWebCT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="URN" msprop:Generator_ColumnVarNameInTable="columnURN" msprop:Generator_ColumnPropNameInRow="URN" msprop:Generator_ColumnPropNameInTable="URNColumn" msprop:Generator_UserColumnName="URN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Coaches" msprop:Generator_TableClassName="CoachesDataTable" msprop:Generator_TableVarName="tableCoaches" msprop:Generator_TablePropName="Coaches" msprop:Generator_RowDeletingName="CoachesRowDeleting" msprop:Generator_UserTableName="Coaches" msprop:Generator_RowChangingName="CoachesRowChanging" msprop:Generator_RowEvHandlerName="CoachesRowChangeEventHandler" msprop:Generator_RowDeletedName="CoachesRowDeleted" msprop:Generator_RowEvArgName="CoachesRowChangeEvent" msprop:Generator_RowChangedName="CoachesRowChanged" msprop:Generator_RowClassName="CoachesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="Nom" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TabCoachingStart2" msprop:Generator_TableClassName="TabCoachingStart2DataTable" msprop:Generator_TableVarName="tableTabCoachingStart2" msprop:Generator_TablePropName="TabCoachingStart2" msprop:Generator_RowDeletingName="TabCoachingStart2RowDeleting" msprop:Generator_UserTableName="TabCoachingStart2" msprop:Generator_RowChangingName="TabCoachingStart2RowChanging" msprop:Generator_RowEvHandlerName="TabCoachingStart2RowChangeEventHandler" msprop:Generator_RowDeletedName="TabCoachingStart2RowDeleted" msprop:Generator_RowEvArgName="TabCoachingStart2RowChangeEvent" msprop:Generator_RowChangedName="TabCoachingStart2RowChanged" msprop:Generator_RowClassName="TabCoachingStart2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clé" msprop:Generator_ColumnVarNameInTable="columnClé" msprop:Generator_ColumnPropNameInRow="Clé" msprop:Generator_ColumnPropNameInTable="CléColumn" msprop:Generator_UserColumnName="Clé" type="xs:int" />
+              <xs:element name="Inscrit" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInscrit" msprop:Generator_ColumnPropNameInRow="Inscrit" msprop:Generator_ColumnPropNameInTable="InscritColumn" msprop:Generator_UserColumnName="Inscrit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="511" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CléCoach" msprop:Generator_ColumnVarNameInTable="columnCléCoach" msprop:Generator_ColumnPropNameInRow="CléCoach" msprop:Generator_ColumnPropNameInTable="CléCoachColumn" msprop:Generator_UserColumnName="CléCoach" type="xs:int" />
+              <xs:element name="Année" msprop:Generator_ColumnVarNameInTable="columnAnnée" msprop:Generator_ColumnPropNameInRow="Année" msprop:Generator_ColumnPropNameInTable="AnnéeColumn" msprop:Generator_UserColumnName="Année" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Spécialisation" msprop:Generator_ColumnVarNameInTable="columnSpécialisation" msprop:Generator_ColumnPropNameInRow="Spécialisation" msprop:Generator_ColumnPropNameInTable="SpécialisationColumn" msprop:Generator_UserColumnName="Spécialisation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Personne_x0020_de_x0020_contact" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPersonne_de_contact" msprop:Generator_ColumnPropNameInRow="Personne_de_contact" msprop:Generator_ColumnPropNameInTable="Personne_de_contactColumn" msprop:Generator_UserColumnName="Personne de contact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="511" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstEmailDémarrageEnvoyé" msprop:Generator_ColumnVarNameInTable="columnEstEmailDémarrageEnvoyé" msprop:Generator_ColumnPropNameInRow="EstEmailDémarrageEnvoyé" msprop:Generator_ColumnPropNameInTable="EstEmailDémarrageEnvoyéColumn" msprop:Generator_UserColumnName="EstEmailDémarrageEnvoyé" type="xs:boolean" />
+              <xs:element name="EmailContact" msprop:Generator_ColumnVarNameInTable="columnEmailContact" msprop:Generator_ColumnPropNameInRow="EmailContact" msprop:Generator_ColumnPropNameInTable="EmailContactColumn" msprop:Generator_UserColumnName="EmailContact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDWebCT" msprop:Generator_ColumnVarNameInTable="columnIDWebCT" msprop:Generator_ColumnPropNameInRow="IDWebCT" msprop:Generator_ColumnPropNameInTable="IDWebCTColumn" msprop:Generator_UserColumnName="IDWebCT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MotPasseWebCT" msprop:Generator_ColumnVarNameInTable="columnMotPasseWebCT" msprop:Generator_ColumnPropNameInRow="MotPasseWebCT" msprop:Generator_ColumnPropNameInTable="MotPasseWebCTColumn" msprop:Generator_UserColumnName="MotPasseWebCT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CléStatut" msprop:Generator_ColumnVarNameInTable="columnCléStatut" msprop:Generator_ColumnPropNameInRow="CléStatut" msprop:Generator_ColumnPropNameInTable="CléStatutColumn" msprop:Generator_UserColumnName="CléStatut">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SousGroupe" msprop:Generator_ColumnVarNameInTable="columnSousGroupe" msprop:Generator_ColumnPropNameInRow="SousGroupe" msprop:Generator_ColumnPropNameInTable="SousGroupeColumn" msprop:Generator_UserColumnName="SousGroupe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prénom" msprop:Generator_ColumnVarNameInTable="columnPrénom" msprop:Generator_ColumnPropNameInRow="Prénom" msprop:Generator_ColumnPropNameInTable="PrénomColumn" msprop:Generator_UserColumnName="Prénom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Membres" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="Etablissements_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Etablissements" />
+      <xs:field xpath="mstns:Cle" />
+    </xs:unique>
+    <xs:unique name="Groupes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Groupes" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="MembresParSession_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MembresParSession" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="GroupeReInscription_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GroupeReInscription" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="Sessions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Sessions" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="sessionsAPreparer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sessionsAPreparer" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="sessionsAPreparerGroupes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sessionsAPreparerGroupes" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="TabCoaching_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TabCoaching" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="CoachingComments_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CoachingComments" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="TabCoachingsStart_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TabCoachingsStart" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="Coaches_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Coaches" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+    <xs:unique name="TabCoachingStart2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TabCoachingStart2" />
+      <xs:field xpath="mstns:Clé" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Inscrits_Membres" msdata:parent="MembresParSession" msdata:child="Membres" msdata:parentkey="Clé" msdata:childkey="CléInscrit" msprop:Generator_UserChildTable="Membres" msprop:Generator_ChildPropName="GetMembresRows" msprop:Generator_ParentPropName="MembresParSessionRow" msprop:Generator_UserRelationName="FK_Inscrits_Membres" msprop:Generator_RelationVarName="relationFK_Inscrits_Membres" msprop:Generator_UserParentTable="MembresParSession" />
+      <msdata:Relationship name="FK_Inscrits_Membres1" msdata:parent="GroupeReInscription" msdata:child="Membres" msdata:parentkey="Clé" msdata:childkey="CléInscrit" msprop:Generator_UserChildTable="Membres" msprop:Generator_ChildPropName="GetMembresRows" msprop:Generator_UserParentTable="GroupeReInscription" msprop:Generator_UserRelationName="FK_Inscrits_Membres1" msprop:Generator_RelationVarName="relationFK_Inscrits_Membres1" msprop:Generator_ParentPropName="GroupeReInscriptionRow" />
+      <msdata:Relationship name="FK_Inscrits_Membres2" msdata:parent="TabCoaching" msdata:child="Membres" msdata:parentkey="Clé" msdata:childkey="CléInscrit" msprop:Generator_UserChildTable="Membres" msprop:Generator_ChildPropName="GetMembresRows" msprop:Generator_ParentPropName="TabCoachingRow" msprop:Generator_UserRelationName="FK_Inscrits_Membres2" msprop:Generator_RelationVarName="relationFK_Inscrits_Membres2" msprop:Generator_UserParentTable="TabCoaching" />
+      <msdata:Relationship name="FK_Membres_Groupes" msdata:parent="Groupes" msdata:child="Membres" msdata:parentkey="Clé" msdata:childkey="CléGroupe" msprop:Generator_UserChildTable="Membres" msprop:Generator_ChildPropName="GetMembresRows" msprop:Generator_ParentPropName="GroupesRow" msprop:Generator_UserRelationName="FK_Membres_Groupes" msprop:Generator_RelationVarName="relationFK_Membres_Groupes" msprop:Generator_UserParentTable="Groupes" />
+      <msdata:Relationship name="FK__Membres__CléCoac__693CA210" msdata:parent="TabCoachingsStart" msdata:child="Membres" msdata:parentkey="Clé" msdata:childkey="CléCoaching" msprop:Generator_UserChildTable="Membres" msprop:Generator_ChildPropName="GetMembresRows" msprop:Generator_UserParentTable="TabCoachingsStart" msprop:Generator_UserRelationName="FK__Membres__CléCoac__693CA210" msprop:Generator_RelationVarName="relationFK__Membres__CléCoac__693CA210" msprop:Generator_ParentPropName="TabCoachingsStartRow" />
+      <msdata:Relationship name="FK__Coachings__CléCo__60A75C0F" msdata:parent="Coaches" msdata:child="TabCoachingsStart" msdata:parentkey="Clé" msdata:childkey="CléCoach" msprop:Generator_UserChildTable="TabCoachingsStart" msprop:Generator_ChildPropName="GetTabCoachingsStartRows" msprop:Generator_UserParentTable="Coaches" msprop:Generator_UserRelationName="FK__Coachings__CléCo__60A75C0F" msprop:Generator_RelationVarName="relationFK__Coachings__CléCo__60A75C0F" msprop:Generator_ParentPropName="CoachesRow" />
+      <msdata:Relationship name="FK__Membres__CléCoac__693CA2101" msdata:parent="TabCoachingStart2" msdata:child="Membres" msdata:parentkey="Clé" msdata:childkey="CléCoaching" msprop:Generator_UserChildTable="Membres" msprop:Generator_ChildPropName="GetMembresRows" msprop:Generator_ParentPropName="TabCoachingStart2Row" msprop:Generator_UserRelationName="FK__Membres__CléCoac__693CA2101" msprop:Generator_RelationVarName="relationFK__Membres__CléCoac__693CA2101" msprop:Generator_UserParentTable="TabCoachingStart2" />
+      <msdata:Relationship name="FK__Coachings__CléCo__60A75C0F1" msdata:parent="Coaches" msdata:child="TabCoachingStart2" msdata:parentkey="Clé" msdata:childkey="CléCoach" msprop:Generator_UserChildTable="TabCoachingStart2" msprop:Generator_ChildPropName="GetTabCoachingStart2Rows" msprop:Generator_ParentPropName="CoachesRow" msprop:Generator_UserRelationName="FK__Coachings__CléCo__60A75C0F1" msprop:Generator_RelationVarName="relationFK__Coachings__CléCo__60A75C0F1" msprop:Generator_UserParentTable="Coaches" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
